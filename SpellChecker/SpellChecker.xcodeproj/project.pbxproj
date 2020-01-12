@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F20FD16D23CA8CA900953949 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F20FD16C23CA8CA900953949 /* main.cpp */; };
+		F256C93523CB3B4900D62A03 /* InputValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F256C93423CB3B4900D62A03 /* InputValidator.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		F20FD16923CA8CA900953949 /* SpellChecker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SpellChecker; sourceTree = BUILT_PRODUCTS_DIR; };
 		F20FD16C23CA8CA900953949 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F256C93323CB3A0B00D62A03 /* InputValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputValidator.h; sourceTree = "<group>"; };
+		F256C93423CB3B4900D62A03 /* InputValidator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InputValidator.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +60,27 @@
 		F20FD16B23CA8CA900953949 /* SpellChecker */ = {
 			isa = PBXGroup;
 			children = (
+				F256C93223CB39D900D62A03 /* Source */,
+				F256C93123CB399600D62A03 /* Header */,
 				F20FD16C23CA8CA900953949 /* main.cpp */,
 			);
 			path = SpellChecker;
+			sourceTree = "<group>";
+		};
+		F256C93123CB399600D62A03 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				F256C93323CB3A0B00D62A03 /* InputValidator.h */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		F256C93223CB39D900D62A03 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F256C93423CB3B4900D62A03 /* InputValidator.cpp */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F20FD16D23CA8CA900953949 /* main.cpp in Sources */,
+				F256C93523CB3B4900D62A03 /* InputValidator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
