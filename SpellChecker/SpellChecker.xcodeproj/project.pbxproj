@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		F20FD16D23CA8CA900953949 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F20FD16C23CA8CA900953949 /* main.cpp */; };
 		F256C93523CB3B4900D62A03 /* InputValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F256C93423CB3B4900D62A03 /* InputValidator.cpp */; };
+		F2D4E75723CB9CC10059BBEA /* InputReaderFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2D4E75523CB9CC10059BBEA /* InputReaderFactory.cpp */; };
+		F2D4E75E23CBAAD80059BBEA /* TextInputReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2D4E75C23CBAAD80059BBEA /* TextInputReader.cpp */; };
+		F2D4E76123CBAE700059BBEA /* TextFileInputReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2D4E75F23CBAE700059BBEA /* TextFileInputReader.cpp */; };
+		F2D4E76423CBB0990059BBEA /* SpellingChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2D4E76223CBB0990059BBEA /* SpellingChecker.cpp */; };
+		F2D4E76623CBC7670059BBEA /* InputReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2D4E76523CBC7670059BBEA /* InputReader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +33,17 @@
 		F20FD16C23CA8CA900953949 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F256C93323CB3A0B00D62A03 /* InputValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputValidator.h; sourceTree = "<group>"; };
 		F256C93423CB3B4900D62A03 /* InputValidator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InputValidator.cpp; sourceTree = "<group>"; };
+		F2D4E75523CB9CC10059BBEA /* InputReaderFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InputReaderFactory.cpp; sourceTree = "<group>"; };
+		F2D4E75623CB9CC10059BBEA /* InputReaderFactory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InputReaderFactory.hpp; sourceTree = "<group>"; };
+		F2D4E75A23CB9D7E0059BBEA /* InputTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputTypes.h; sourceTree = "<group>"; };
+		F2D4E75B23CBA5110059BBEA /* InputReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputReader.h; sourceTree = "<group>"; };
+		F2D4E75C23CBAAD80059BBEA /* TextInputReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextInputReader.cpp; sourceTree = "<group>"; };
+		F2D4E75D23CBAAD80059BBEA /* TextInputReader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextInputReader.hpp; sourceTree = "<group>"; };
+		F2D4E75F23CBAE700059BBEA /* TextFileInputReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextFileInputReader.cpp; sourceTree = "<group>"; };
+		F2D4E76023CBAE700059BBEA /* TextFileInputReader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextFileInputReader.hpp; sourceTree = "<group>"; };
+		F2D4E76223CBB0990059BBEA /* SpellingChecker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpellingChecker.cpp; sourceTree = "<group>"; };
+		F2D4E76323CBB0990059BBEA /* SpellingChecker.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SpellingChecker.hpp; sourceTree = "<group>"; };
+		F2D4E76523CBC7670059BBEA /* InputReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InputReader.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +76,7 @@
 		F20FD16B23CA8CA900953949 /* SpellChecker */ = {
 			isa = PBXGroup;
 			children = (
+				F2D4E75423CB9C820059BBEA /* Input */,
 				F256C93223CB39D900D62A03 /* Source */,
 				F256C93123CB399600D62A03 /* Header */,
 				F20FD16C23CA8CA900953949 /* main.cpp */,
@@ -70,6 +87,7 @@
 		F256C93123CB399600D62A03 /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				F2D4E76323CBB0990059BBEA /* SpellingChecker.hpp */,
 				F256C93323CB3A0B00D62A03 /* InputValidator.h */,
 			);
 			path = Header;
@@ -79,6 +97,39 @@
 			isa = PBXGroup;
 			children = (
 				F256C93423CB3B4900D62A03 /* InputValidator.cpp */,
+				F2D4E76223CBB0990059BBEA /* SpellingChecker.cpp */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F2D4E75423CB9C820059BBEA /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4E75923CB9CDA0059BBEA /* Source */,
+				F2D4E75823CB9CD30059BBEA /* Header */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		F2D4E75823CB9CD30059BBEA /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4E76023CBAE700059BBEA /* TextFileInputReader.hpp */,
+				F2D4E75D23CBAAD80059BBEA /* TextInputReader.hpp */,
+				F2D4E75623CB9CC10059BBEA /* InputReaderFactory.hpp */,
+				F2D4E75A23CB9D7E0059BBEA /* InputTypes.h */,
+				F2D4E75B23CBA5110059BBEA /* InputReader.h */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		F2D4E75923CB9CDA0059BBEA /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4E75523CB9CC10059BBEA /* InputReaderFactory.cpp */,
+				F2D4E75C23CBAAD80059BBEA /* TextInputReader.cpp */,
+				F2D4E75F23CBAE700059BBEA /* TextFileInputReader.cpp */,
+				F2D4E76523CBC7670059BBEA /* InputReader.cpp */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -140,8 +191,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2D4E75E23CBAAD80059BBEA /* TextInputReader.cpp in Sources */,
 				F20FD16D23CA8CA900953949 /* main.cpp in Sources */,
+				F2D4E76123CBAE700059BBEA /* TextFileInputReader.cpp in Sources */,
+				F2D4E75723CB9CC10059BBEA /* InputReaderFactory.cpp in Sources */,
+				F2D4E76623CBC7670059BBEA /* InputReader.cpp in Sources */,
 				F256C93523CB3B4900D62A03 /* InputValidator.cpp in Sources */,
+				F2D4E76423CBB0990059BBEA /* SpellingChecker.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +316,7 @@
 		F20FD17123CA8CA900953949 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -268,6 +325,7 @@
 		F20FD17223CA8CA900953949 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

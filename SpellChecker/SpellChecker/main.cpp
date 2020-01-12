@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include "InputValidator.h"
+#include "SpellingChecker.hpp"
 
 int main(int argc, const char * argv[]) {
     
@@ -15,11 +16,16 @@ int main(int argc, const char * argv[]) {
         return 1;
     }
     
+    spellchecker::SpellingChecker spellingChecker;
+    
+    
     for (int i = 1; i < argc; i += 2) {
         switch (argv[i][1]) {
             case 's':
+                spellingChecker.SpellCheck((spellchecker::input::InputTypes)0, argv[i + 1]);
                 break;
             case 'f':
+                spellingChecker.SpellCheck((spellchecker::input::InputTypes)1, argv[i + 1]);
                 break;
             case 'a':
                 break;
