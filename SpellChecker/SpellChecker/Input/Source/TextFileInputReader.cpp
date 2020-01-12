@@ -27,6 +27,11 @@ std::vector<std::string> TextFileInputReader::GetInput(std::string input) {
     
     std::string word;
     while (file >> word) {
+        
+        if (ispunct(word.back())) {
+            word.pop_back();
+        }
+            
         inputStringsVector.push_back(word);
     }
     
