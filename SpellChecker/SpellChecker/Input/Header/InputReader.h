@@ -16,7 +16,11 @@ namespace spellchecker::input {
 
 class InputReader {
 public:
+    // Gets all the words from the given input
+    // Returns a vector<string> that contains all the words from the input.
+    // If a word had a punctuation mark at the end of the word, it will be deleted.
     virtual std::vector<std::string> GetInput(std::string input) = 0;
+    
     virtual ~InputReader() = 0;
 };
 }

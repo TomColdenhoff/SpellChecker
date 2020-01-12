@@ -15,6 +15,9 @@
 namespace spellchecker::input {
 class InputReaderFactory {
 public:
+    // Returns the correct InputReader pointer for the input type.
+    // The caller should later delete the pointer because we instantiate the InputReader
+    // on the heap.
     InputReader* GetInputReader(InputTypes inputType);
 };
 }
