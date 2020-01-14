@@ -18,7 +18,11 @@ namespace spellchecker::models {
     
 class DictionaryLoader {
 public:
+    // Loads the given dictionary(.txt file with all the words) into memory (as a trie data structure)
+    // and returns a pointer to the first node of the dictionary.
     WordDictionaryNode* LoadWordDictionary(std::string dictionaryPath);
+    
+    // Unloads the whole dictionary(that's connected to the root node) from memory.
     void UnloadWordDictionary(WordDictionaryNode* rootWordDictionareNode);
 private:
     void DeleteNode(WordDictionaryNode* node);

@@ -37,9 +37,11 @@ WordDictionaryNode* DictionaryLoader::LoadWordDictionary(std::string dictionaryP
     
     std::map<char, int>* charIndexMap = CreateCharacterIndexMap(uniqueChars);
     int charAmount = uniqueChars.size();
-    WordDictionaryNode* rootNode = new WordDictionaryNode(charIndexMap, charAmount);
-    rootNode->children.resize(charAmount);
     
+    
+    WordDictionaryNode* rootNode = new WordDictionaryNode(charIndexMap, charAmount);
+    
+    // Fill the whole trie data structure by looping through all the words.
     for (std::string word : words) {
         WordDictionaryNode* currentNode = rootNode;
 

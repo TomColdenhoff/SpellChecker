@@ -13,11 +13,15 @@
 #include <map>
 
 namespace spellchecker::models {
+    
 class WordDictionaryNode {
 public:
     WordDictionaryNode(std::map<char, int>* charIndexMap, int size) : charIndexMap(charIndexMap) { children.resize(size);}
     
+    // Returns the index of the given character in the children vector.
+    // Returns INT_MIN if the character is not part of the used alphabet.
     int GetCharIndex(char ch);
+    
     std::map<char, int>* GetIndexMap() { return charIndexMap; }
     
     bool IsWord = false;
