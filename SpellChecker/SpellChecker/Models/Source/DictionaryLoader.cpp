@@ -49,11 +49,11 @@ WordDictionaryNode* DictionaryLoader::LoadWordDictionary(std::string dictionaryP
         for (int i = 0; i < charsInWord; ++i) {
             
             int charIndex = currentNode->GetCharIndex(word[i]);
-            if (currentNode->children[charIndex] == nullptr) {
-                currentNode->children[charIndex] = new WordDictionaryNode(charIndexMap, charAmount);
+            if (currentNode->Children[charIndex] == nullptr) {
+                currentNode->Children[charIndex] = new WordDictionaryNode(charIndexMap, charAmount);
             }
             
-            currentNode = currentNode->children[charIndex];
+            currentNode = currentNode->Children[charIndex];
             
             if (i == charsInWord - 1) {
                 currentNode->IsWord = true;
@@ -74,7 +74,7 @@ void DictionaryLoader::UnloadWordDictionary(WordDictionaryNode* rootWordDictiona
     
 void DictionaryLoader::DeleteNode(WordDictionaryNode* node) {
     
-    for (WordDictionaryNode* childNode : node->children) {
+    for (WordDictionaryNode* childNode : node->Children) {
         
         if (childNode == nullptr) {
             continue;
