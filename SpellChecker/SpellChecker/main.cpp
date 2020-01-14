@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
     }
     
     spellchecker::SpellingChecker spellingChecker;
-    
+    spellingChecker.Initialize("EnglishWords.txt");
     
     for (int i = 1; i < argc; i += 2) {
         switch (argv[i][1]) {

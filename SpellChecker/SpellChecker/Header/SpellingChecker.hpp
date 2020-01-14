@@ -10,15 +10,24 @@
 #define SpellingChecker_hpp
 
 #include "InputTypes.h"
+#include "WordDictionaryNode.h"
 #include <vector>
 #include <string>
 
 namespace spellchecker {
 class SpellingChecker {
 public:
+    // Initializes the SpellingChecker object by loading the given dictionary(path).
+    void Initialize(std::string dictionary);
+    
     // Checks if the spelling is correct for all the words in the given input.
     // Returns a vector<string> that contains all the misspelled words.
     std::vector<std::string> SpellCheck(spellchecker::input::InputTypes inputType, std::string input);
+    
+    ~SpellingChecker();
+    
+private:
+    models::WordDictionaryNode* rootWordDictionaryNode = nullptr;
 };
 }
 

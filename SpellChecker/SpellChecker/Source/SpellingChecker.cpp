@@ -6,21 +6,43 @@
 //  Copyright © 2020 Tom Coldenhoff. All rights reserved.
 //
 
+#include "DictionaryLoader.hpp"
 #include "SpellingChecker.hpp"
 #include "InputReaderFactory.hpp"
+#include "SpellChecker.hpp"
 
 namespace spellchecker {
+
+void SpellingChecker::Initialize(std::string dictionary) {
+    models::DictionaryLoader dictionaryLoader;
+    rootWordDictionaryNode = dictionaryLoader.LoadWordDictionary(dictionary);
+}
 
 std::vector<std::string> SpellingChecker::SpellCheck(spellchecker::input::InputTypes inputType, std::string input) {
     
     spellchecker::input::InputReaderFactory inputReaderFactory;
     spellchecker::input::InputReader* inputReader = inputReaderFactory.GetInputReader(inputType);
     
-    std::vector<std::string> misspelledWordsVector = inputReader->GetInput(input);
+    std::vector<std::string> wordsInputVector = inputReader->GetInput(input);
+    spellchecker::spellchecking::interface::SpellChecker *spellChecker = new spellchecker::spellchecking::SpellChecker();
+    
+    std::vector<std::string> misspelledWordsVector;
+    
+    for(std::string word : wordsInputVector) {
+        if (!spellChecker->CheckSpelling(word)) {
+            misspelledWordsVector.push_back(word);
+        }
+    }
     
     delete inputReader;
+    delete spellChecker;
     
-    return std::vector<std::string>();
+    return misspelledWordsVector;
+}
+
+SpellingChecker::~SpellingChecker() {
+    models::DictionaryLoader dictionaryLoader;
+    dictionaryLoader.UnloadWordDictionary(rootWordDictionaryNode);
 }
 
 }

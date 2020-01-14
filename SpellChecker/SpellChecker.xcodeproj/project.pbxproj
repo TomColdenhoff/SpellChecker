@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		F20FD16D23CA8CA900953949 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F20FD16C23CA8CA900953949 /* main.cpp */; };
 		F256C93523CB3B4900D62A03 /* InputValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F256C93423CB3B4900D62A03 /* InputValidator.cpp */; };
+		F2D43A2223CE188400555F53 /* SpellChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2D43A2023CE188400555F53 /* SpellChecker.cpp */; };
+		F2D43A2823CE2E5700555F53 /* DictionaryLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2D43A2623CE2E5700555F53 /* DictionaryLoader.cpp */; };
+		F2D43A2B23CE546F00555F53 /* WordDictionaryNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2D43A2A23CE546F00555F53 /* WordDictionaryNode.cpp */; };
 		F2D4E75723CB9CC10059BBEA /* InputReaderFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2D4E75523CB9CC10059BBEA /* InputReaderFactory.cpp */; };
 		F2D4E75E23CBAAD80059BBEA /* TextInputReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2D4E75C23CBAAD80059BBEA /* TextInputReader.cpp */; };
 		F2D4E76123CBAE700059BBEA /* TextFileInputReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2D4E75F23CBAE700059BBEA /* TextFileInputReader.cpp */; };
@@ -33,6 +36,13 @@
 		F20FD16C23CA8CA900953949 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F256C93323CB3A0B00D62A03 /* InputValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputValidator.h; sourceTree = "<group>"; };
 		F256C93423CB3B4900D62A03 /* InputValidator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InputValidator.cpp; sourceTree = "<group>"; };
+		F2D43A1F23CE167D00555F53 /* SpellChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpellChecker.h; sourceTree = "<group>"; };
+		F2D43A2023CE188400555F53 /* SpellChecker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpellChecker.cpp; sourceTree = "<group>"; };
+		F2D43A2123CE188400555F53 /* SpellChecker.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SpellChecker.hpp; sourceTree = "<group>"; };
+		F2D43A2623CE2E5700555F53 /* DictionaryLoader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DictionaryLoader.cpp; sourceTree = "<group>"; };
+		F2D43A2723CE2E5700555F53 /* DictionaryLoader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DictionaryLoader.hpp; sourceTree = "<group>"; };
+		F2D43A2923CE2F4400555F53 /* WordDictionaryNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordDictionaryNode.h; sourceTree = "<group>"; };
+		F2D43A2A23CE546F00555F53 /* WordDictionaryNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = WordDictionaryNode.cpp; sourceTree = "<group>"; };
 		F2D4E75523CB9CC10059BBEA /* InputReaderFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InputReaderFactory.cpp; sourceTree = "<group>"; };
 		F2D4E75623CB9CC10059BBEA /* InputReaderFactory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InputReaderFactory.hpp; sourceTree = "<group>"; };
 		F2D4E75A23CB9D7E0059BBEA /* InputTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputTypes.h; sourceTree = "<group>"; };
@@ -76,6 +86,8 @@
 		F20FD16B23CA8CA900953949 /* SpellChecker */ = {
 			isa = PBXGroup;
 			children = (
+				F2D43A2323CE1EBE00555F53 /* Models */,
+				F2D43A1C23CE163E00555F53 /* SpellChecking */,
 				F2D4E75423CB9C820059BBEA /* Input */,
 				F256C93223CB39D900D62A03 /* Source */,
 				F256C93123CB399600D62A03 /* Header */,
@@ -100,6 +112,59 @@
 				F2D4E76223CBB0990059BBEA /* SpellingChecker.cpp */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		F2D43A1C23CE163E00555F53 /* SpellChecking */ = {
+			isa = PBXGroup;
+			children = (
+				F2D43A1E23CE165A00555F53 /* Header */,
+				F2D43A1D23CE164D00555F53 /* Source */,
+			);
+			path = SpellChecking;
+			sourceTree = "<group>";
+		};
+		F2D43A1D23CE164D00555F53 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F2D43A2023CE188400555F53 /* SpellChecker.cpp */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F2D43A1E23CE165A00555F53 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				F2D43A2123CE188400555F53 /* SpellChecker.hpp */,
+				F2D43A1F23CE167D00555F53 /* SpellChecker.h */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		F2D43A2323CE1EBE00555F53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F2D43A2523CE1EDA00555F53 /* Headers */,
+				F2D43A2423CE1ECB00555F53 /* Source */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F2D43A2423CE1ECB00555F53 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F2D43A2623CE2E5700555F53 /* DictionaryLoader.cpp */,
+				F2D43A2A23CE546F00555F53 /* WordDictionaryNode.cpp */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F2D43A2523CE1EDA00555F53 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				F2D43A2723CE2E5700555F53 /* DictionaryLoader.hpp */,
+				F2D43A2923CE2F4400555F53 /* WordDictionaryNode.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		F2D4E75423CB9C820059BBEA /* Input */ = {
@@ -192,11 +257,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2D4E75E23CBAAD80059BBEA /* TextInputReader.cpp in Sources */,
+				F2D43A2B23CE546F00555F53 /* WordDictionaryNode.cpp in Sources */,
 				F20FD16D23CA8CA900953949 /* main.cpp in Sources */,
 				F2D4E76123CBAE700059BBEA /* TextFileInputReader.cpp in Sources */,
 				F2D4E75723CB9CC10059BBEA /* InputReaderFactory.cpp in Sources */,
+				F2D43A2823CE2E5700555F53 /* DictionaryLoader.cpp in Sources */,
 				F2D4E76623CBC7670059BBEA /* InputReader.cpp in Sources */,
 				F256C93523CB3B4900D62A03 /* InputValidator.cpp in Sources */,
+				F2D43A2223CE188400555F53 /* SpellChecker.cpp in Sources */,
 				F2D4E76423CBB0990059BBEA /* SpellingChecker.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
