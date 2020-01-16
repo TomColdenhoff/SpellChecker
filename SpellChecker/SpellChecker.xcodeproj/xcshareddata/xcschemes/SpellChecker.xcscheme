@@ -56,7 +56,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "&quot;This is a huge. test!&quot;"
+            argument = "&quot;this is a huge. test!&quot;"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

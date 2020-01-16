@@ -24,7 +24,7 @@ std::vector<std::string> SpellingChecker::SpellCheck(spellchecker::input::InputT
     spellchecker::input::InputReader* inputReader = inputReaderFactory.GetInputReader(inputType);
     
     std::vector<std::string> wordsInputVector = inputReader->GetInput(input);
-    spellchecker::spellchecking::interface::SpellChecker *spellChecker = new spellchecker::spellchecking::SpellChecker();
+    spellchecker::spellchecking::interface::SpellChecker *spellChecker = new spellchecker::spellchecking::SpellChecker(rootWordDictionaryNode);
     
     std::vector<std::string> misspelledWordsVector;
     

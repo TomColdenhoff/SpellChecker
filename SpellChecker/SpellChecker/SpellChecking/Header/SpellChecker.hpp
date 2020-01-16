@@ -10,13 +10,18 @@
 #define SpellChecker_hpp
 
 #include "SpellChecker.h"
+#include "WordDictionaryNode.h"
 #include <string>
 
 namespace spellchecker::spellchecking {
     
 class SpellChecker : public spellchecker::spellchecking::interface::SpellChecker {
 public:
+    SpellChecker(models::WordDictionaryNode* rootWordDictionaryNode);
     bool CheckSpelling(std::string word) override;
+    
+private:
+    models::WordDictionaryNode* rootWordDictionaryNode = nullptr;
 };
 }
 

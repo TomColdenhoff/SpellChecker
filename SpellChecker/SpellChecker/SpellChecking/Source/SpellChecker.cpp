@@ -10,9 +10,27 @@
 
 namespace spellchecker::spellchecking {
 
+SpellChecker::SpellChecker(models::WordDictionaryNode* rootWordDictionaryNode) : rootWordDictionaryNode(rootWordDictionaryNode) {}
+
 bool SpellChecker::CheckSpelling(std::string word) {
     
+    models::WordDictionaryNode* currentNode = rootWordDictionaryNode;
+    
+    int wordSize = word.size();
+    for (int i = 0; i < wordSize; ++i) {
+        int charIndex = currentNode->GetCharIndex(word[i]);
+        
+        if (currentNode->Children[charIndex] == nullptr) {
+            return false;
+        }
+        
+        currentNode = currentNode->Children[charIndex];
+        
+        if (i == wordSize - 1) {
+            return currentNode->IsWord;
+        }
+    }
      
-    return true;
+    return false;
 }
 }
