@@ -22,9 +22,7 @@ std::vector<std::string> TextInputReader::GetInput(std::string input) {
         if (currentWord == "")
             continue;
         
-        if (ispunct(currentWord.back())) {
-            currentWord.pop_back();
-        }
+        currentWord = ProcessWord(currentWord);
         
         inputStringsVector.push_back(currentWord);
     }

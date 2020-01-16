@@ -52,11 +52,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-s"
+            argument = "-f"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "&quot;this is a huge. test!&quot;"
+            argument = "TestFile.txt"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

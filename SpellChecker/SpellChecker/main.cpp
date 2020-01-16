@@ -19,13 +19,15 @@ int main(int argc, const char * argv[]) {
     spellchecker::SpellingChecker spellingChecker;
     spellingChecker.Initialize("EnglishWords.txt");
     
+    std::vector<std::string> misspelledWords;
+    
     for (int i = 1; i < argc; i += 2) {
         switch (argv[i][1]) {
             case 's':
-                spellingChecker.SpellCheck((spellchecker::input::InputTypes)0, argv[i + 1]);
+                misspelledWords = spellingChecker.SpellCheck((spellchecker::input::InputTypes)0, argv[i + 1]);
                 break;
             case 'f':
-                spellingChecker.SpellCheck((spellchecker::input::InputTypes)1, argv[i + 1]);
+                misspelledWords = spellingChecker.SpellCheck((spellchecker::input::InputTypes)1, argv[i + 1]);
                 break;
             case 'a':
                 break;
@@ -34,6 +36,17 @@ int main(int argc, const char * argv[]) {
                 std::cout << "Usage error: Invalid flag, you can use the following flags: " << std::endl << "-s" << std::endl << "-f" << std::endl << "-a" << std::endl;
                 return 2;
         }
+    }
+    
+    std::cout << "Found a total of " << misspelledWords.size() << " misspelled words." << std::endl;
+    
+    if (misspelledWords.size() == 0) {
+        return 0;
+    }
+    
+    std::cout << "The misspelled words are:" << std::endl << std::endl;
+    for (std::string word : misspelledWords) {
+        std::cout << word << std::endl;
     }
     
     return 0;

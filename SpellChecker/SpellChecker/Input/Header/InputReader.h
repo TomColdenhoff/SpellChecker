@@ -22,6 +22,10 @@ public:
     virtual std::vector<std::string> GetInput(std::string input) = 0;
     
     virtual ~InputReader() = 0;
+    
+protected:
+    // Processes the word and tries changing it to a acceptable word for the dictionary.
+    std::string ProcessWord(std::string originalWord);
 };
 }
 
