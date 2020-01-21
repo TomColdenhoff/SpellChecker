@@ -47,7 +47,15 @@ int main(int argc, const char * argv[]) {
     std::cout << "The misspelled words are:" << std::endl << std::endl;
     for (std::string word : misspelledWords) {
         std::cout << word << std::endl;
+        std::cout << "Did you mean:" << std::endl;
+        
+        std::vector<std::string> suggestions = spellingChecker.SuggestSpelling(word);
+        for (std::string suggestion : suggestions) {
+            std::cout << suggestion << std::endl;
+        }
     }
+    
+    
     
     return 0;
 }

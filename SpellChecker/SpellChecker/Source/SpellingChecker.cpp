@@ -10,6 +10,7 @@
 #include "SpellingChecker.hpp"
 #include "InputReaderFactory.hpp"
 #include "SpellChecker.hpp"
+#include "SpellSuggester.hpp"
 
 namespace spellchecker {
 
@@ -38,6 +39,17 @@ std::vector<std::string> SpellingChecker::SpellCheck(spellchecker::input::InputT
     delete spellChecker;
     
     return misspelledWordsVector;
+}
+
+std::vector<std::string> SpellingChecker::SuggestSpelling(std::string misspelledWord) {
+    
+    spellchecker::spellsuggesting::interface::SpellSuggester *spellingSuggester = new spellchecker::spellsuggesting::SpellSuggester(rootWordDictionaryNode);
+    
+    std::vector<std::string> suggestions = spellingSuggester->SuggestSpelling(misspelledWord);
+    
+    delete spellingSuggester;
+    
+    return suggestions;
 }
 
 SpellingChecker::~SpellingChecker() {

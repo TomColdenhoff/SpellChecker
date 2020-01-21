@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F20FD16D23CA8CA900953949 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F20FD16C23CA8CA900953949 /* main.cpp */; };
 		F256C93523CB3B4900D62A03 /* InputValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F256C93423CB3B4900D62A03 /* InputValidator.cpp */; };
+		F2B2A41823D48624004BE5F6 /* SpellSuggester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2B2A41623D48624004BE5F6 /* SpellSuggester.cpp */; };
 		F2D43A2223CE188400555F53 /* SpellChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2D43A2023CE188400555F53 /* SpellChecker.cpp */; };
 		F2D43A2823CE2E5700555F53 /* DictionaryLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2D43A2623CE2E5700555F53 /* DictionaryLoader.cpp */; };
 		F2D43A2B23CE546F00555F53 /* WordDictionaryNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2D43A2A23CE546F00555F53 /* WordDictionaryNode.cpp */; };
@@ -36,6 +37,9 @@
 		F20FD16C23CA8CA900953949 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F256C93323CB3A0B00D62A03 /* InputValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputValidator.h; sourceTree = "<group>"; };
 		F256C93423CB3B4900D62A03 /* InputValidator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InputValidator.cpp; sourceTree = "<group>"; };
+		F2B2A41623D48624004BE5F6 /* SpellSuggester.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpellSuggester.cpp; sourceTree = "<group>"; };
+		F2B2A41723D48624004BE5F6 /* SpellSuggester.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SpellSuggester.hpp; sourceTree = "<group>"; };
+		F2B2A41923D4873D004BE5F6 /* SpellSuggester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpellSuggester.h; sourceTree = "<group>"; };
 		F2D43A1F23CE167D00555F53 /* SpellChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpellChecker.h; sourceTree = "<group>"; };
 		F2D43A2023CE188400555F53 /* SpellChecker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpellChecker.cpp; sourceTree = "<group>"; };
 		F2D43A2123CE188400555F53 /* SpellChecker.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SpellChecker.hpp; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 		F20FD16B23CA8CA900953949 /* SpellChecker */ = {
 			isa = PBXGroup;
 			children = (
+				F2B2A41323D485DD004BE5F6 /* SpellSuggesting */,
 				F2D43A2323CE1EBE00555F53 /* Models */,
 				F2D43A1C23CE163E00555F53 /* SpellChecking */,
 				F2D4E75423CB9C820059BBEA /* Input */,
@@ -110,6 +115,32 @@
 			children = (
 				F256C93423CB3B4900D62A03 /* InputValidator.cpp */,
 				F2D4E76223CBB0990059BBEA /* SpellingChecker.cpp */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F2B2A41323D485DD004BE5F6 /* SpellSuggesting */ = {
+			isa = PBXGroup;
+			children = (
+				F2B2A41523D485FE004BE5F6 /* Source */,
+				F2B2A41423D485F8004BE5F6 /* Header */,
+			);
+			path = SpellSuggesting;
+			sourceTree = "<group>";
+		};
+		F2B2A41423D485F8004BE5F6 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				F2B2A41723D48624004BE5F6 /* SpellSuggester.hpp */,
+				F2B2A41923D4873D004BE5F6 /* SpellSuggester.h */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		F2B2A41523D485FE004BE5F6 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F2B2A41623D48624004BE5F6 /* SpellSuggester.cpp */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -259,6 +290,7 @@
 				F2D4E75E23CBAAD80059BBEA /* TextInputReader.cpp in Sources */,
 				F2D43A2B23CE546F00555F53 /* WordDictionaryNode.cpp in Sources */,
 				F20FD16D23CA8CA900953949 /* main.cpp in Sources */,
+				F2B2A41823D48624004BE5F6 /* SpellSuggester.cpp in Sources */,
 				F2D4E76123CBAE700059BBEA /* TextFileInputReader.cpp in Sources */,
 				F2D4E75723CB9CC10059BBEA /* InputReaderFactory.cpp in Sources */,
 				F2D43A2823CE2E5700555F53 /* DictionaryLoader.cpp in Sources */,

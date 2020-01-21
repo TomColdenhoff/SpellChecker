@@ -26,7 +26,8 @@ public:
     void UnloadWordDictionary(WordDictionaryNode* rootWordDictionareNode);
 private:
     void DeleteNode(WordDictionaryNode* node);
-    std::map<char, int>* CreateCharacterIndexMap(std::set<char> uniqueCharacters);
+    
+    std::tuple<std::map<char, int>*, std::map<int, char>*> CreateMaps(std::set<char> uniqueCharacters);
 };
 }
 

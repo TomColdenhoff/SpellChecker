@@ -21,4 +21,15 @@ int WordDictionaryNode::GetCharIndex(char ch) {
     return INT_MIN;
 }
     
+char WordDictionaryNode::GetIndexChar(int index) {
+    
+    std::map<int, char>::iterator it = indexCharMap->find(index);
+    
+    if (it != indexCharMap->end()) {
+        return it->second;
+    }
+    
+    return '\0';
+}
+    
 }

@@ -10,6 +10,7 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include <tuple>
 
 namespace spellchecker::models {
     
@@ -35,11 +36,11 @@ WordDictionaryNode* DictionaryLoader::LoadWordDictionary(std::string dictionaryP
         words.push_back(word);
     }
     
-    std::map<char, int>* charIndexMap = CreateCharacterIndexMap(uniqueChars);
+    std::tuple<std::map<char, int>*, std::map<int, char>*>  mapTuple = CreateMaps(uniqueChars);
     int charAmount = uniqueChars.size();
     
     
-    WordDictionaryNode* rootNode = new WordDictionaryNode(charIndexMap, charAmount);
+    WordDictionaryNode* rootNode = new WordDictionaryNode(std::get<0>(mapTuple), std::get<1>(mapTuple), charAmount);
     
     // Fill the whole trie data structure by looping through all the words.
     for (std::string word : words) {
@@ -50,7 +51,7 @@ WordDictionaryNode* DictionaryLoader::LoadWordDictionary(std::string dictionaryP
             
             int charIndex = currentNode->GetCharIndex(word[i]);
             if (currentNode->Children[charIndex] == nullptr) {
-                currentNode->Children[charIndex] = new WordDictionaryNode(charIndexMap, charAmount);
+                currentNode->Children[charIndex] = new WordDictionaryNode(std::get<0>(mapTuple), std::get<1>(mapTuple), charAmount);
             }
             
             currentNode = currentNode->Children[charIndex];
@@ -85,17 +86,19 @@ void DictionaryLoader::DeleteNode(WordDictionaryNode* node) {
     }
 }
     
-std::map<char, int>* DictionaryLoader::CreateCharacterIndexMap(std::set<char> uniqueCharacters) {
+std::tuple<std::map<char, int>*, std::map<int, char>*> DictionaryLoader::CreateMaps(std::set<char> uniqueCharacters) {
     
-    std::map<char, int>* map = new std::map<char, int>();
+    std::map<char, int>* charIndexMap = new std::map<char, int>();
+    std::map<int, char>* indexCharMap = new std::map<int, char>();
     
     int i = 0;
     for (char ch : uniqueCharacters) {
-        map->insert( std::pair<char,int>(ch, i) );
+        charIndexMap->insert( std::pair<char,int>(ch, i) );
+        indexCharMap->insert(std::pair<int, char>(i, ch));
         i++;
     }
     
-    return map;
+    return std::tuple<std::map<char, int>*, std::map<int, char>*>(charIndexMap, indexCharMap);
 }
     
 }

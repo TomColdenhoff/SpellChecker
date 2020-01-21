@@ -56,7 +56,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "TestFile.txt"
+            argument = "text.txt"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

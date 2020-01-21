@@ -24,6 +24,9 @@ public:
     // Returns a vector<string> that contains all the misspelled words.
     std::vector<std::string> SpellCheck(spellchecker::input::InputTypes inputType, std::string input);
     
+    // Returns possible spelling suggestions for the given misspelled word.
+    std::vector<std::string> SuggestSpelling(std::string misspelledWord);
+    
     ~SpellingChecker();
     
 private:
