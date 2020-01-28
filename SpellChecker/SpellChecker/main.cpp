@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
     }
     
     spellchecker::SpellingChecker spellingChecker;
-    spellingChecker.Initialize("EnglishWords.txt");
+    spellingChecker.Initialize("Dictionary.txt");
     
     std::vector<std::string> misspelledWords;
     
