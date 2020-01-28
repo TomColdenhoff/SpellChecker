@@ -90,8 +90,27 @@ std::vector<std::string> SpellSuggester::SuggestSpelling(std::string word) {
 //}
     
 std::vector<std::string> SpellSuggester::FindSuggestion(std::vector<char> trace, std::string remainingChars, int currentOffset, models::WordDictionaryNode* currentNode) {
-
     
+    std::vector<std::string> words;
+    models::WordDictionaryNode* selectNode;
+
+    for (int i = 0; i < currentNode->Children.size(); ++i) {
+        
+        if (currentNode->Children[i] == nullptr) {
+            continue;
+        }
+        
+        selectNode = currentNode->Children[i];
+        char currentNodeChar = selectNode->GetIndexChar(i);
+        
+        for (int j = 0; j < selectNode->Children.size(); ++i) {
+            if (currentNode->Children[i] == nullptr) {
+                continue;
+            }
+            
+//            models::WordDictionaryNode* currentSelectedNode =
+        }
+    }
     
     return std::vector<std::string>();
 }
